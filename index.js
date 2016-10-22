@@ -81,6 +81,7 @@ function sendGenericMessage(sender) {
                 "elements": [{
                     "title": "First card",
                     "subtitle": "Element #1 of an hscroll",
+                    "item_url": "http://messengerdemo.parseapp.com/",
                     "image_url": "http://messengerdemo.parseapp.com/img/rift.png",
                     "buttons": [{
                         "type": "web_url",
@@ -94,6 +95,7 @@ function sendGenericMessage(sender) {
                 }, {
                     "title": "Second card",
                     "subtitle": "Element #2 of an hscroll",
+                    "item_url": "http://messengerdemo.parseapp.com/",
                     "image_url": "http://messengerdemo.parseapp.com/img/gearvr.png",
                     "buttons": [{
                         "type": "postback",
