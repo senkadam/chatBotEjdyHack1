@@ -46,7 +46,7 @@ app.post('/webhook/', function(req, res) {
             } else {
                 quickReply(sender);
             }
-        } else if (event.message.quick_reply.payload) {
+        } else if (event.message && event.message.quick_reply && event.message.quick_reply.payload) {
             console.log(JSON.stringify(event, null, 2));
             let payload = event.message.quick_reply.payload;
             if (payload === "HERMAN") {
