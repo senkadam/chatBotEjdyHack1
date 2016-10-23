@@ -39,13 +39,24 @@ app.post('/webhook/', function(req, res) {
 
             console.log(JSON.stringify(event, null, 2));
             let payload = event.postback.payload;
-            if(payload === "HERMAN"){
+            if (payload === "HERMAN") {
                 videoBrady(sender)
-            } else if (payload === "JAK_JSEM_HRDY"){
+            } else if (payload === "JAK_JSEM_HRDY") {
                 videoJsemHrdy(sender);
             } else {
                 quickReply(sender);
             }
+        } else if (event.message.quick_reply.payload) {
+            console.log(JSON.stringify(event, null, 2));
+            let payload = event.message.quick_reply.payload;
+            if (payload === "HERMAN") {
+                videoBrady(sender)
+            } else if (payload === "JAK_JSEM_HRDY") {
+                videoJsemHrdy(sender);
+            } else {
+                quickReply(sender);
+            }
+
         } else if (event.message && event.message.text) {
             let text = event.message.text
             if (text === 'Generic') {
