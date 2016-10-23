@@ -144,6 +144,27 @@ function sendGenericMessage(sender) {
 
 function videoBrady(sender) {
     let messageData = {
+        "text": "Rekl jsem, ze Hermana fakt komentovat nebudu - https://www.facebook.com/bernyz/videos/10210962774648056/"
+    };
+    request({
+        url: 'https://graph.facebook.com/v2.6/me/messages',
+        qs: {access_token: token},
+        method: 'POST',
+        json: {
+            recipient: {id: sender},
+            message: messageData,
+        }
+    }, function(error, response, body) {
+        if (error) {
+            console.log('Error sending messages: ', error)
+        } else if (response.body.error) {
+            console.log('Error: ', response.body.error)
+        }
+    })
+};
+
+function videoBrady2(sender) {
+    let messageData = {
         "attachment": {
             "type": "video",
             "payload": {
