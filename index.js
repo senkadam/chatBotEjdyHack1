@@ -20,7 +20,7 @@ app.use(bodyParser.json())
 app.get('/', function(req, res) {
     persistentMenu();
     res.send('Hello world, I am a chat bot')
-})
+});
 
 // for Facebook verification
 app.get('/webhook/', function(req, res) {
@@ -247,7 +247,7 @@ function persistentMenu() {
         } else if (response.body.error) {
             console.log('Error: ', response.body.error)
         }
-    }
+    })
 };
 
 
