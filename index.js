@@ -185,12 +185,12 @@ function quickReply(sender) {
         "quick_replies": [
             {
                 "content_type": "text",
-                "title": "Jak jsem hrdý na Miloše",
+                "title": "Jsem hrdý na Miloše",
                 "payload": "JAK_JSEM_HRDY"
             },
             {
                 "content_type": "text",
-                "title": "Herman a jeho skazky ",
+                "title": "Herman a jeho skazky",
                 "payload": "HERMAN"
             }
         ]
@@ -220,17 +220,17 @@ function persistentMenu() {
         "call_to_actions": [
             {
                 "type": "postback",
-                "title": "Na Miloše jsem hrdý",
+                "title": "Jsem hrdý na Miloše",
                 "payload": "JAK_SEM_HRDY"
             },
             {
                 "type": "postback",
-                "title": "Hermana nebudu komentovat",
+                "title": "Herman mi nalozil",
                 "payload": "HERMAN"
             },
             {
                 "type": "web_url",
-                "title": "Je prezident jeste na hrade?",
+                "title": "Je Milos na hrade?",
                 "url": "http://www.jetencurakjesteprezidentem.cz/"
             }
         ]
