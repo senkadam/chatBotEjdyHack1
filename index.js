@@ -35,17 +35,9 @@ app.post('/webhook/', function(req, res) {
     for (let i = 0; i < messaging_events.length; i++) {
         let event = req.body.entry[0].messaging[i]
         let sender = event.sender.id
-        if (event.message && event.message.text) {
-            let text = event.message.text
-            if (text === 'Generic') {
-                sendGenericMessage(sender)
-                continue
-            }
-            quickReply(sender);
-        }
         if (event.postback) {
 
-
+            console.log(JSON.stringify(event, null, 2));
             let payload = event.postback.payload;
             if(payload === "HERMAN"){
                 videoBrady(sender)
@@ -54,7 +46,15 @@ app.post('/webhook/', function(req, res) {
             } else {
                 quickReply(sender);
             }
+        } else if (event.message && event.message.text) {
+            let text = event.message.text
+            if (text === 'Generic') {
+                sendGenericMessage(sender)
+                continue
+            }
+            quickReply(sender);
         }
+
     }
     res.sendStatus(200)
 })
